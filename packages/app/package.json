@@ -1,0 +1,37 @@
+{
+  "name": "@spotjs/app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "yarn type-check -- --watch",
+    "build": "webpack --progress --colors --mode=production",
+    "start": "concurrently --kill-others --kill-others-on-fail -p name --names \"config,common-deps\" \"yarn start:config\" \"yarn start:common-deps\"",
+    "start:config": "webpack-dev-server --config ./webpack.config.config.dev.js --port 4701",
+    "start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 4702"
+  },
+  "dependencies": {
+    "single-spa": "^4.3.7",
+    "systemjs": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^4.1.2",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "sass-loader": "^7.3.1",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
+  }
+}

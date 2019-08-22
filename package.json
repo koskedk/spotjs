@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "spotjs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "navbar": "yarn workspace @spotjs/navbar start",
+    "root-config": "yarn workspace @spotjs/app start:config",
+    "common-deps": "yarn workspace @spotjs/app start:common-deps",
+    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\""
+  },
+  "dependencies": {
+    "concurrently": "^4.1.2"
+  }
+}
