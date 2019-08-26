@@ -6,7 +6,6 @@ config.plugins.push(new webpack.NamedModulesPlugin());
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 config.devServer = {
   host: "0.0.0.0",
-  contentBase: "./build",
   historyApiFallback: true,
   headers: {
     "Access-Control-Allow-Origin": "*"
