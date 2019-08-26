@@ -1,7 +1,7 @@
 export function prefix(location, ...prefixes) {
     return prefixes.some(
         prefix => (
-            location.href.indexOf(`${location.origin}/${prefix}`) !== -1
+            location.href.indexOf(`${location.origin}/#/${prefix}`) !== -1
         )
     )
 }
@@ -11,10 +11,9 @@ export function navbar(location) {
 }
 
 export function stats(location) {
-  console.log(location);
-    return prefix(location, '')||prefix(location, 'stats')
+  return  location.hash.startsWith('#/stats') || !location.hash.startsWith('#/globe')
 }
 
 export function globe(location) {
-    return prefix(location, 'globe')
+    return  location.hash.startsWith('#/globe')
 }
