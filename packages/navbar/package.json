@@ -8,6 +8,7 @@
     "type-check:watch": "yarn type-check -- --watch",
     "build": "webpack --progress --colors --mode=production",
     "start": "webpack-dev-server --config webpack.config.lib.js --progress --colors --mode=development",
+    "start:prod": "webpack-dev-server --config webpack.config.lib.js --mode=production",
     "start:app": "webpack-dev-server --config webpack.config.app.js --progress --colors --mode=development"
   },
   "dependencies": {

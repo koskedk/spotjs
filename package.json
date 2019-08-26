@@ -5,10 +5,15 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "echo todo",
     "navbar": "yarn workspace @spotjs/navbar start",
+    "navbar:prod": "yarn workspace @spotjs/navbar start:prod",
     "root-config": "yarn workspace @spotjs/app start:config",
+    "root-config:prod": "yarn workspace @spotjs/app start:config:prod",
     "common-deps": "yarn workspace @spotjs/app start:common-deps",
-    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\""
+    "common-deps:prod": "yarn workspace @spotjs/app start:common-deps:prod",
+    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\"",
+    "start:prod": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\""
   },
   "dependencies": {
     "concurrently": "^4.1.2"

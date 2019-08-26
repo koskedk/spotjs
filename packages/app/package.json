@@ -9,7 +9,9 @@
     "build": "webpack --config ./webpack.config.config.js --progress --colors --mode=production",
     "start": "concurrently --kill-others --kill-others-on-fail -p name --names \"config,common-deps\" \"yarn start:config\" \"yarn start:common-deps\"",
     "start:config": "webpack-dev-server --config ./webpack.config.config.dev.js --port 4701",
-    "start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 4702"
+    "start:common-deps": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --port 4702",
+    "start:config:prod": "webpack-dev-server --config ./webpack.config.config.dev.js --mode=production --port 4701",
+    "start:common-deps:prod": "webpack-dev-server --config ./webpack.common-deps.config.dev.js --mode=production --port 4702"
   },
   "dependencies": {
     "primeflex": "^1.0.0-rc.1",
