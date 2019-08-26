@@ -1,23 +1,24 @@
 /* eslint-env node */
-const config = require('./webpack.config.config.js');
-const webpack = require('webpack');
+const config = require("./webpack.config.config.js");
+const webpack = require("webpack");
 
 config.plugins.push(new webpack.NamedModulesPlugin());
 config.plugins.push(new webpack.HotModuleReplacementPlugin());
 config.devServer = {
-  contentBase: './build',
+  host: "0.0.0.0",
+  contentBase: "./build",
   historyApiFallback: true,
   headers: {
-    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Origin": "*"
   },
   proxy: {
     "/common/": {
       target: "http://localhost:4702",
-      pathRewrite: {"^/common" : ""}
+      pathRewrite: { "^/common": "" }
     }
   }
-}
+};
 
-config.mode = 'development'
+config.mode = "development";
 
 module.exports = config;
