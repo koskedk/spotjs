@@ -10,10 +10,10 @@
 <script type="systemjs-importmap">
       {
         "imports": {
-          "@portal/config": "http://68.183.47.234:4701/config.js",
-          "@portal/navbar": "http://68.183.47.234:4703/navbar.js",
-              "@portal/globe": "http://68.183.47.234:4711/globe.js",
-                  "@portal/stats": "http://68.183.47.234:4721/stats.js"
+         "@portal/config": "http://localhost:4701/config.js",
+         "@portal/navbar": "http://localhost:4703/navbar.js",
+         "@portal/globe": "http://localhost:4711/globe.js",
+         "@portal/stats": "http://localhost:4721/stats.js"
         }
       }
 </script>
@@ -22,8 +22,12 @@
 <script src='https://unpkg.com/systemjs@5.0.0/dist/extras/named-exports.js'></script>
 <script src='https://unpkg.com/systemjs@5.0.0/dist/extras/use-default.js'></script>
 
+
+
+
+
 <!-- Load the common deps-->
-<script type="text/javascript" src="http://68.183.47.234:4702/common-deps.js"></script>
+<script type="text/javascript" src="http://localhost:4702/common-deps.js"></script>
 
 <!-- Load the application -->
 <script>

@@ -8,12 +8,10 @@
     "build": "echo todo",
     "navbar": "yarn workspace @spotjs/navbar start",
     "navbar:prod": "yarn workspace @spotjs/navbar start:prod",
-    "root-config": "yarn workspace @spotjs/app start:config",
-    "root-config:prod": "yarn workspace @spotjs/app start:config:prod",
-    "common-deps": "yarn workspace @spotjs/app start:common-deps",
-    "common-deps:prod": "yarn workspace @spotjs/app start:common-deps:prod",
-    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\"",
-    "start:prod": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn common-deps\" \"yarn root-config\""
+    "app": "yarn workspace @spotjs/app start",
+    "app:prod": "yarn workspace @spotjs/app start:prod",
+    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn app\"",
+    "start:prod": "concurrently --kill-others-on-fail \"yarn navbar:prod\"  \"yarn app:prod\""
   },
   "dependencies": {
     "concurrently": "^4.1.2"
