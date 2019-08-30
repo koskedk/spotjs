@@ -13,5 +13,16 @@ module.exports = merge(common, {
         filename: '[name].js',
         libraryTarget: 'amd',
         path: path.resolve(__dirname, 'dist'),
-    }
+    },
+    externals: [
+        /^lodash$/,
+        /^single-spa$/,
+        /^react$/,
+        /^react\/lib.*/,
+        /^react-dom$/,
+        /.*react-dom.*/,
+        /^rxjs\/?.*$/,
+        /^prime$/,
+    ],
+
 });
