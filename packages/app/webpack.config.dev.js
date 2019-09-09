@@ -1,6 +1,8 @@
 const merge = require('webpack-merge');
 const common = require('./webpack.config');
 const webpack = require("webpack");
+const path = require('path');
+const APP_PATH = path.resolve(__dirname, "src");
 
 common.devServer.proxy = {
     "/common/": {
@@ -11,6 +13,13 @@ common.devServer.proxy = {
 
 module.exports = merge(common, {
     mode: "development",
+
+    entry: path.join(APP_PATH, 'config.js'),
+
+    output: {
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'build'),
+    },
 
     plugins: [
         new webpack.DefinePlugin({
