@@ -3,15 +3,9 @@ const webpack = require("webpack");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const APP_PATH = path.resolve(__dirname, "src");
 
 module.exports = {
-    entry: "./src/config.js",
-    output: {
-        filename: "config.js",
-        library: "config",
-        libraryTarget: "amd",
-        path: path.resolve(__dirname, "build")
-    },
     module: {
         rules: [
             {parser: {System: false}},

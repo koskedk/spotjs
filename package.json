@@ -5,13 +5,12 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "echo todo",
-    "navbar": "yarn workspace @spotjs/navbar start",
-    "navbar:prod": "yarn workspace @spotjs/navbar start:prod",
-    "app": "yarn workspace @spotjs/app start",
-    "app:prod": "yarn workspace @spotjs/app start:prod",
-    "start": "concurrently --kill-others-on-fail \"yarn navbar\"  \"yarn app\"",
-    "start:prod": "concurrently --kill-others-on-fail \"yarn navbar:prod\"  \"yarn app:prod\""
+    "start:config": "yarn workspace @spotjs/app start",
+    "navbar:build": "yarn workspace @spotjs/navbar build",
+    "common:build": "yarn workspace @spotjs/commons build",
+    "config:build": "yarn workspace @spotjs/app build",
+    "build": "yarn config:build && yarn navbar:build && yarn common:build",
+    "start": "yarn workspace @spotjs/app start"
   },
   "dependencies": {
     "concurrently": "^4.1.2"

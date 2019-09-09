@@ -5,12 +5,6 @@ const webpack = require("webpack");
 
 module.exports = {
 
-    entry: './src/common-deps.js',
-    output: {
-        filename: 'common-deps.js',
-        path: path.resolve(__dirname, 'build/common-deps'),
-        chunkFilename: '[name].js',
-    },
     node: {
         fs: 'empty',
     },

@@ -1,28 +1,27 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
-const path = require('path');
-const APP_PATH = path.resolve(__dirname, 'src');
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
+const path = require("path");
+const APP_PATH = path.resolve(__dirname, "src");
+const PUB_PATH = path.join(__dirname, "/../app/build/topbar");
 
 module.exports = merge(common, {
+  entry: {
+    navbar: path.join(APP_PATH, "navbar.ts")
+  },
 
-    entry: {
-        'navbar': path.join(APP_PATH, 'navbar.ts'),
-    },
-
-    output: {
-        filename: '[name].js',
-        libraryTarget: 'amd',
-        path: path.resolve(__dirname, 'dist'),
-    },
-    externals: [
-        /^lodash$/,
-        /^single-spa$/,
-        /^react$/,
-        /^react\/lib.*/,
-        /^react-dom$/,
-        /.*react-dom.*/,
-        /^rxjs\/?.*$/,
-        /^prime$/,
-    ],
-
+  output: {
+    filename: "[name].js",
+    libraryTarget: "amd",
+    path: PUB_PATH
+  },
+  externals: [
+    /^lodash$/,
+    /^single-spa$/,
+    /^react$/,
+    /^react\/lib.*/,
+    /^react-dom$/,
+    /.*react-dom.*/,
+    /^rxjs\/?.*$/,
+    /^prime$/
+  ]
 });
