@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --config webpack.common-deps.dev.js"
   },
   "dependencies": {
-       "systemjs": "^5.0.0"
+    "systemjs": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

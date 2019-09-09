@@ -1,30 +1,29 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.config');
+const merge = require("webpack-merge");
+const common = require("./webpack.config");
 const webpack = require("webpack");
-const path = require('path');
+const path = require("path");
 const APP_PATH = path.resolve(__dirname, "src");
 
 common.devServer.proxy = {
-    "/common/": {
-        target: "http://localhost:4702",
-        pathRewrite: {"^/common": ""}
-    }
-}
+  "/common/": {
+    target: "http://localhost:4702",
+    pathRewrite: { "^/common": "" }
+  }
+};
 
 module.exports = merge(common, {
-    mode: "development",
+  mode: "development",
 
-    entry: path.join(APP_PATH, 'config.js'),
+  entry: path.join(APP_PATH, "config.js"),
 
-    output: {
-        filename: '[name].js',
-        path: path.resolve(__dirname, 'build'),
-    },
+  output: {
+    filename: "[name].js",
+    path: path.resolve(__dirname, "build")
+  },
 
-    plugins: [
-        new webpack.DefinePlugin({
-            'SERVICE_URL': JSON.stringify('localhost')
-        })
-    ],
+  plugins: [
+    new webpack.DefinePlugin({
+      SERVICE_URL: JSON.stringify("localhost")
+    })
+  ]
 });
-
