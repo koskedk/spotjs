@@ -3,7 +3,7 @@ const common = require("./webpack.common-deps");
 const webpack = require("webpack");
 const path = require("path");
 const APP_PATH = path.resolve(__dirname, "src");
-const PUB_PATH = path.join(__dirname, "/../app/build/commons");
+const PUB_PATH = path.join(__dirname, "/../app/spot/commons");
 module.exports = merge(common, {
   mode: "production",
   entry: path.join(APP_PATH, "common-deps.js"),

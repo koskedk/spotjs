@@ -2,7 +2,7 @@ const merge = require("webpack-merge");
 const common = require("./webpack.common.js");
 const path = require("path");
 const APP_PATH = path.resolve(__dirname, "src");
-const PUB_PATH = path.join(__dirname, "/../app/build/topbar");
+const PUB_PATH = path.join(__dirname, "/../app/spot/topbar");
 
 module.exports = merge(common, {
   entry: {

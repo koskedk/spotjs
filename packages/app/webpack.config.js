@@ -27,7 +27,7 @@ module.exports = {
   },
 
   devServer: {
-    contentBase: path.join(__dirname, "build"),
+    contentBase: path.join(__dirname, "spot"),
     host: "0.0.0.0",
     compress: true,
     port: 4701,
@@ -43,7 +43,14 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([{ from: path.resolve(__dirname, "src/index.html") }])
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "src/index.html")
+      },
+      {
+        from: path.resolve(__dirname, "src/favicon.ico")
+      }
+    ])
   ],
   devtool: "source-map",
   externals: [/^lodash$/, /^single-spa$/, /^rxjs\/?.*$/]

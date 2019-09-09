@@ -19,7 +19,7 @@ module.exports = merge(common, {
     filename: "config.js",
     library: "config",
     libraryTarget: "amd",
-    path: path.resolve(__dirname, "build")
+    path: path.resolve(__dirname, "spot")
   },
 
   plugins: [

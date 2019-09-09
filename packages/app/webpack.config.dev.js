@@ -18,7 +18,7 @@ module.exports = merge(common, {
 
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "build")
+    path: path.resolve(__dirname, "spot")
   },
 
   plugins: [
