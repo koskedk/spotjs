@@ -16,8 +16,8 @@ export class Root extends Component<any, any> {
                     </div>
                         <ul>
                             <Route>
-                                <li><NavLink to={"/globe/"} activeClassName="active">Globe</NavLink></li>
-                                <li><NavLink to={"/stats/"}>Stats</NavLink></li>
+                                <li><NavLink to={"/globe/"} activeClassName="active">Partners</NavLink></li>
+                                <li><NavLink to={"/stats/"}>Facilities</NavLink></li>
                             </Route>
                         </ul>
                 </div>
