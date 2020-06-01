@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config webpack.config.prod.js --progress --colors --mode=production",
-    "start": "http-server build"
+    "start": "http-server spot"
   },
   "dependencies": {
     "primeflex": "^1.0.0-rc.1",

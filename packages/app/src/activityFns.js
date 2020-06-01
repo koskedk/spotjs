@@ -11,9 +11,13 @@ export function navbar(location) {
 }
 
 export function stats(location) {
-  return  location.hash.startsWith('#/stats') || !location.hash.startsWith('#/globe')
+  return  location.hash.startsWith('#/stats') || (!(location.hash.startsWith('#/globe')) && !location.hash.startsWith('#/migration'))
 }
 
 export function globe(location) {
     return  location.hash.startsWith('#/globe')
+}
+
+export function mgs(location) {
+    return location.hash.startsWith('#/migration')
 }

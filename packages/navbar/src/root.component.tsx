@@ -12,11 +12,14 @@ export class Root extends Component<any, any> {
         return (
             <HashRouter>
                 <div className="nav-top">
-                    <div className="logo">
-                    </div>
+                    <a href="/">
+                        <div className="logo">
+                        </div>
+                    </a>
                         <ul>
                             <Route>
                                 <li><NavLink to={"/globe/"} activeClassName="active">Partners</NavLink></li>
+                                <li><NavLink to={"/migration/"}>EMR Migration</NavLink></li>
                                 <li><NavLink to={"/stats/"}>Facilities</NavLink></li>
                             </Route>
                         </ul>
